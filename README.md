@@ -1,118 +1,178 @@
-Films Revenue Analysis Using SQL and Tableau
-Overview
+# Films Revenue Analysis Using SQL and Tableau
+
+## Overview
 
 This project explores film rental performance using data from the Sakila Database, focusing on key metrics such as category revenue, rental frequency, and regional trends. The analysis combines data warehousing with SQL and visual analytics with Tableau to identify insights into business performance, customer demand, and content profitability.
 
 The study provides a structured data mart, generates analytical queries, and visualizes business outcomes through interactive Tableau dashboards.
 
-Schema and Data Integration
+---
 
-The Sakila database was used as the foundation to design a film-focused data warehouse.
-Multiple relational tables were integrated into a consolidated summary table named film_summary, enabling cross-sectional analysis across categories, rentals, and geographies.
+## Schema and Data Integration
 
-Schema Diagram
+The Sakila database was used as the foundation to design a film-focused data warehouse. Multiple relational tables were integrated into a consolidated summary table named **film_summary**, enabling cross-sectional analysis across categories, rentals, and geographies.
 
-Joined Tables
+### Schema Diagram
+
+![Schema](images/schema.png)
+
+### Joined Tables
+
+![Tables Joined](images/tablesJoined.png)
 
 The warehouse integrates data from:
 
-film, category, rental, payment, inventory, and customer
+* `film`, `category`, `rental`, `payment`, `inventory`, and `customer`
+* Additional links with `actor`, `city`, and `country`
 
-Additional links with actor, city, and country tables
-This integration supports full traceability of film performance from inventory to revenue.
+This design allows analysis of film performance across rental counts, geography, and financial performance.
 
-SQL Analysis
+---
 
-A series of analytical SQL queries were developed to address core business questions, including:
+## SQL Analysis
 
-Which film categories generate the highest revenue?
+A series of analytical SQL queries were developed to answer core business questions:
 
-What are the top-performing films by total revenue and rentals?
+1. Which film categories generate the highest revenue?
+2. What are the top-performing films by total revenue and rentals?
+3. Which actors appear in the most profitable films?
+4. Which countries and cities contribute the most to revenue?
+5. How do rental trends vary over time and across genres?
+6. What revenue differences exist between low-, mid-, and high-budget films?
 
-Which actors appear in the most profitable films?
+These outputs were exported and visualized in Tableau to create an integrated analysis.
 
-Which countries and cities contribute the most to revenue?
+---
 
-How do rental trends vary over time and across genres?
+## Visual Insights
 
-What revenue differences exist between low, medium, and high-budget films?
+### Top 5 Revenue-Generating Categories
 
-These insights were exported as clean datasets and visualized through Tableau.
+![Top 5 Categories by Revenue](images/RevenueTop5Cat.png)
 
-Visual Insights
-Top 5 Revenue-Generating Categories
+High-performing categories such as **Sports**, **Sci-Fi**, and **Animation** led global earnings, reflecting audience preference for dynamic and visually driven genres.
 
-High-performing categories such as Sports, Sci-Fi, and Animation led revenue generation, reflecting audience demand for dynamic and visually rich content.
+---
 
-Top 10 Revenue-Generating Films
+### Top 10 Revenue-Generating Films
 
-Analysis highlighted consistent outperformance by a select group of films across multiple regions, showing strong brand and cast influence on earnings.
+![Top 10 Revenue Films](images/Top10FilmsRev.png)
 
-Top Actors by Film Revenue
+A small number of films accounted for a disproportionate share of total revenue, indicating the dominance of select high-performing titles.
 
-Certain actors showed a significant impact on sales, appearing repeatedly in high-grossing titles, emphasizing the link between casting strategy and commercial success.
+---
 
-Top 10 Countries by Revenue
+### Top Actors by Film Revenue
 
-Revenue concentration was highest in India, China, and the United States, indicating markets with the greatest rental activity and customer engagement.
+![Top Actors by Film Revenue](images/TopFilmsActors.png)
 
-Most Rented Films by Category
+A handful of actors consistently appeared in top-grossing films, emphasizing the impact of casting strategy on profitability.
 
-The rental analysis revealed diverse consumer preferences, with family and comedy titles consistently achieving higher rental frequency.
+---
 
-Highest-Grossing Film per Category
+### Top 10 Countries by Revenue
 
-Across all genres, select titles consistently achieved both high revenue and strong rental volumes, confirming balanced demand across pricing tiers.
+![Top 10 Countries](images/Top10Countries.png)
 
-Top Rental Cities
+Revenue was concentrated in **India**, **China**, and the **United States**, showing the strong influence of global streaming and rental markets.
 
-Urban areas demonstrated higher engagement rates, aligning with digital infrastructure and local content demand.
+---
 
-Revenue by Budget Category
+### Most Rented Films by Category
 
-High-budget films performed better globally, validating the return potential on premium content investments.
+![Top Film by Category](images/TopFilmInCat.png)
 
-Geographic Revenue Distribution
+Consumer rental behavior varied widely by category, with family, sports, and comedy genres achieving strong repeat rentals.
 
-Revenue distribution visualization identified global rental hubs, reflecting the broad reach and cross-cultural consumption of entertainment content.
+---
 
-Monthly Rental Trends by Category
+### Highest-Grossing Film per Category
 
-Rental activity peaked mid-year, indicating seasonal engagement patterns likely influenced by holidays and regional trends.
+![Top Grossing Film by Category](images/TopGrossFilmInCat.png)
 
-Rental Performance by Genre
+Across all categories, the highest-grossing titles demonstrated strong alignment between production investment and audience return.
 
-The analysis demonstrated that Sports, Family, and Action films achieved the highest rental frequencies, showing balanced cross-category demand.
+---
 
-Top 5 Most Rented Films
+### Top Rental Cities
 
-Films such as Rocketeer Mother and Bucket Brotherhood dominated rentals, reinforcing strong audience appeal and accessibility.
+![Top Rental Cities](images/TopRentCities.png)
 
-Tableau Dashboard
+Urban regions recorded significantly higher rental frequencies, supported by digital accessibility and larger customer bases.
 
+---
 
-The final dashboard integrates all visual elements to support exploratory analysis and business presentation.
-View Tableau Dashboard (Public Link)
+### Revenue by Budget Category
 
-Key Insights
+![Budget Category vs Revenue](images/BudgetCatAndRevenue.png)
 
-High-budget productions dominate total revenue, yet mid-budget films remain competitive in volume.
+High-budget productions delivered the largest revenue returns, confirming that investment scale correlates with global performance.
 
-Global rental demand is concentrated in high-population markets with digital accessibility.
+---
 
-Certain actors and film genres consistently outperform others, suggesting targeted investment opportunities.
+### Geographic Revenue Distribution
 
-Temporal trends reveal opportunities for promotional campaigns during rental peaks.
+![Revenue by Geography](images/RevenueGeo.png)
 
-The integration of data warehousing and visualization demonstrates effective end-to-end analytics capability.
+A spatial view of total revenue shows key international markets driving the bulk of performance, highlighting regional strengths.
 
-Project Files
-Folder	Description
-data/	Cleaned datasets used for visualization
-sql/	SQL scripts for schema, joins, and analytical queries
-tableau/	Tableau workbook (.twb)
-images/	Visual outputs and dashboards
-reports/	Final report and supporting documentation
-Conclusion
+---
 
-This project demonstrates the practical application of data warehousing, SQL analysis, and Tableau visualization in transforming raw transactional data into actionable business insights. The findings support data-driven decision-making in content acquisition, pricing strategies, and global market targeting.
+### Monthly Rental Trends by Category
+
+![Rental Trends Over Time](images/RentTrendOverTime.png)
+
+Rental activity followed a seasonal pattern, with mid-year peaks representing high consumer engagement periods.
+
+---
+
+### Rental Performance by Genre
+
+![Rental Performance by Genre](images/RentalGenreTrend.png)
+
+Action, Family, and Sports films recorded the highest rental volumes, confirming balanced cross-genre interest.
+
+---
+
+### Top 5 Most Rented Films
+
+![Top 5 Most Rented Films](images/Top5FilmGraph.png)
+
+Titles such as *Bucket Brotherhood* and *Rocketeer Mother* led global rental counts, sustaining consistent demand across time.
+
+---
+
+## Tableau Dashboard
+
+![Interactive Tableau Dashboard](images/InteractiveTabDashboard.png)
+The final dashboard integrates all visualizations into a unified interface for exploration and presentation.
+[View Tableau Dashboard (Public Link)](#)
+
+---
+
+## Key Insights
+
+* High-budget films generate the majority of global revenue.
+* Family and action genres consistently perform well across markets.
+* Regional rental demand aligns with market size and access to digital media.
+* Mid-year peaks in rental activity suggest timing-based marketing opportunities.
+* The data warehouse approach streamlines analytical reporting across all business units.
+
+---
+
+## Project Files
+
+| Folder     | Description                                 |
+| ---------- | ------------------------------------------- |
+| `data/`    | Cleaned datasets used for visualization     |
+| `sql/`     | SQL scripts for schema, joins, and analysis |
+| `tableau/` | Tableau workbook file (`.twb`)              |
+| `images/`  | Exported charts and dashboards              |
+| `reports/` | Final written report and documentation      |
+
+---
+
+## Conclusion
+
+This project demonstrates the integration of SQL-based data warehousing with Tableau visualization to derive meaningful insights from raw transactional data. The resulting analytics framework supports strategic decisions in film acquisition, pricing, and global distribution.
+
