@@ -14,7 +14,7 @@ The Sakila database was used as the foundation to design a film-focused data war
 
 ### Schema Diagram
 
-![Schema](images/schema.png)
+![Schema](images/ERD.png)
 
 ### Joined Tables
 
